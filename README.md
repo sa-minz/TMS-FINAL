@@ -21,8 +21,29 @@ A desktop-based **Transportation Management System (TMS)** developed using **C# 
 * **C#**
 * **.NET**
 * **Windows Forms**
+* **Microsoft SQL Server LocalDB**
 * **Visual Studio**
 * **Object-Oriented Programming (OOP)**
+
+## 🗄️ Database
+
+This application uses **Microsoft SQL Server LocalDB**.
+
+```text
+Database: TransportMS
+Server: (localdb)\MSSQLLocalDB
+Authentication: Windows Authentication
+```
+
+The application connects to the database using:
+
+```text
+Data Source=(localdb)\MSSQLLocalDB;
+Initial Catalog=TransportMS;
+Integrated Security=True
+```
+
+> **Note:** The database itself is not included in this repository. The application is configured to connect to a local SQL Server LocalDB instance.
 
 ## 🏗️ Project Structure
 
@@ -47,15 +68,24 @@ TMS-FINAL
 │
 ├── TMS-FINAL.sln
 ├── .gitignore
-└── .gitattributes
+└── README.md
 ```
 
 ## ⚙️ Getting Started
+
+### Prerequisites
+
+Before running the application, install:
+
+* **Visual Studio**
+* **.NET SDK** compatible with the project
+* **Microsoft SQL Server LocalDB**
 
 ### 1. Clone the repository
 
 ```bash
 git clone https://github.com/sa-minz/TMS-FINAL.git
+cd TMS-FINAL
 ```
 
 ### 2. Open the project
@@ -68,17 +98,33 @@ TMS-FINAL.sln
 
 using **Visual Studio**.
 
-### 3. Restore dependencies
+### 3. Configure the database
+
+Create or restore a SQL Server LocalDB database named:
+
+```text
+TransportMS
+```
+
+The application expects the SQL Server LocalDB instance:
+
+```text
+(localdb)\MSSQLLocalDB
+```
+
+The required database tables should be available before running the application.
+
+### 4. Restore dependencies
 
 Allow Visual Studio to restore the required .NET dependencies.
 
-### 4. Build the project
+### 5. Build the project
 
-In Visual Studio:
+In Visual Studio, select:
 
 **Build → Build Solution**
 
-### 5. Run the application
+### 6. Run the application
 
 Press:
 
@@ -120,7 +166,7 @@ Allows authorized users to manage transportation vehicles.
 
 Provides functionality for managing transportation routes.
 
-### 🔗 Assignments
+### 🔗 Driver & Vehicle Assignment
 
 Allows drivers and vehicles to be assigned for transportation operations.
 
@@ -128,9 +174,20 @@ Allows drivers and vehicles to be assigned for transportation operations.
 
 Provides functionality for generating transportation-related bills.
 
-### 📊 Records & Reports
+### 📋 Records
 
-Allows users to view stored records and system reports.
+Allows users to view and manage transportation records.
+
+### 📊 Reports
+
+Provides access to transportation-related reports and information.
+
+## 🔐 Security
+
+* Database authentication uses **Windows Authentication** through SQL Server LocalDB.
+* No database username or password is hard-coded in the application.
+* Visual Studio temporary files and build outputs are excluded using `.gitignore`.
+* Local database files and environment files are excluded from Git.
 
 ## 📚 Purpose
 
@@ -139,10 +196,12 @@ This project was developed to gain practical experience in:
 * C# desktop application development
 * Windows Forms development
 * Object-Oriented Programming
-* User interface design
-* CRUD-based application development
+* Database-driven application development
+* CRUD operations
+* SQL Server database integration
+* User authentication
+* Role-based application functionality
 * Software development
-* Transportation management systems
 
 ## 👩‍💻 Author
 
